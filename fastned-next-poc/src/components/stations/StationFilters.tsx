@@ -40,7 +40,7 @@ export function StationFilters({ filters, onChange }: StationFiltersProps) {
           ))}
         </Select>
       </div>
-      <label className="flex items-center gap-2 rounded-2xl border border-white/60 bg-white/80 px-3 py-2 text-xs font-semibold text-muted">
+      <label className="flex h-10 items-center gap-2 rounded-2xl border border-white/70 bg-white/80 px-3 text-sm font-semibold text-muted">
         <span>Min power</span>
         <input
           aria-label="Minimum power"
@@ -52,6 +52,7 @@ export function StationFilters({ filters, onChange }: StationFiltersProps) {
           onChange={(event) =>
             onChange({ ...filters, minPowerKw: Number(event.target.value) })
           }
+          className="accent-accent-strong"
         />
         <span className="text-ink">{filters.minPowerKw}kW</span>
       </label>

@@ -19,9 +19,10 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
   const debouncedQuery = useDebouncedValue(filters.q, 300);
   const queryFilters = { ...filters, q: debouncedQuery };
 
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading, isError, isFetching } = useQuery({
     queryKey: ['stations', queryFilters],
-    queryFn: () => fetchStations(queryFilters)
+    queryFn: () => fetchStations(queryFilters),
+    placeholderData: (previous) => previous
   });
 
   const { favorites } = useFavorites();
@@ -68,6 +69,7 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
           <StationList
             stations={stations}
             isLoading={isLoading}
+            isUpdating={isFetching && !isLoading}
             compare={compare}
             lastUpdated={data?.meta.lastUpdated}
           />

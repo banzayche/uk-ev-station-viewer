@@ -1,5 +1,6 @@
 import { StationListItem } from '@/domain/types';
 import { StationCard } from './StationCard';
+import { Skeleton } from '@/components/ui/Skeleton';
 
 export type CompareState = {
   selectedIds: string[];
@@ -11,16 +12,26 @@ export type CompareState = {
 type StationListProps = {
   stations: StationListItem[];
   isLoading?: boolean;
+  isUpdating?: boolean;
   compare?: CompareState;
   lastUpdated?: string;
 };
 
-export function StationList({ stations, isLoading, compare, lastUpdated }: StationListProps) {
-  if (isLoading) {
+export function StationList({
+  stations,
+  isLoading,
+  isUpdating,
+  compare,
+  lastUpdated
+}: StationListProps) {
+  if (isLoading && stations.length === 0) {
     return (
-      <div className="space-y-3">
-        {Array.from({ length: 3 }).map((_, index) => (
-          <div key={index} className="h-24 animate-pulse rounded-2xl bg-white/60" />
+      <div className="min-h-[420px] space-y-3">
+        <div className="flex min-h-[18px] items-center justify-between text-xs text-muted">
+          <span>&nbsp;</span>
+        </div>
+        {Array.from({ length: 4 }).map((_, index) => (
+          <Skeleton key={index} className="h-24" />
         ))}
       </div>
     );
@@ -28,17 +39,26 @@ export function StationList({ stations, isLoading, compare, lastUpdated }: Stati
 
   if (stations.length === 0) {
     return (
-      <div className="rounded-2xl border border-white/50 bg-white/70 p-6 text-sm text-muted">
+      <div className="min-h-[220px] rounded-2xl border border-white/50 bg-white/70 p-6 text-sm text-muted">
         No stations match your filters.
       </div>
     );
   }
 
   return (
-    <div className="space-y-3">
-      {lastUpdated ? (
-        <p className="text-xs text-muted">Last updated {new Date(lastUpdated).toLocaleString()}</p>
-      ) : null}
+    <div className="min-h-[420px] space-y-3">
+      <div className="flex min-h-[18px] items-center justify-between text-xs text-muted">
+        <span>
+          {lastUpdated ? `Last updated ${new Date(lastUpdated).toLocaleString()}` : '\u00A0'}
+        </span>
+        {isUpdating ? (
+          <span className="rounded-full bg-white/80 px-2 py-0.5 text-[11px] text-muted">
+            Updating…
+          </span>
+        ) : (
+          <span>&nbsp;</span>
+        )}
+      </div>
       <ul className="space-y-3">
         {stations.map((station) => (
           <li key={station.id}>

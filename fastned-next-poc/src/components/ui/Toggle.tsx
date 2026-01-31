@@ -13,7 +13,7 @@ export function Toggle({ pressed, onPressedChange, label }: ToggleProps) {
       aria-pressed={pressed}
       onClick={() => onPressedChange(!pressed)}
       className={cn(
-        'flex items-center gap-2 rounded-full border border-white/70 bg-white/80 px-3 py-2 text-xs font-semibold',
+        'flex h-10 items-center gap-2 rounded-2xl border border-white/70 bg-white/80 px-3 text-sm font-semibold',
         pressed ? 'text-ink' : 'text-muted'
       )}
     >

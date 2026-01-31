@@ -25,9 +25,9 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
         <AppProviders>
-          <div className="flex min-h-screen flex-col">
+          <div className="flex min-h-[100dvh] flex-col">
             <NavBar />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 pb-20">{children}</main>
             <Footer />
           </div>
         </AppProviders>

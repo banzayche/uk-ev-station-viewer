@@ -56,7 +56,7 @@ export default function MapView({ stations, center, zoom, onSelectStation }: Map
       center={[center.lat, center.lon]}
       zoom={zoom}
       scrollWheelZoom
-      className="h-full min-h-[320px]"
+      className="h-full"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'

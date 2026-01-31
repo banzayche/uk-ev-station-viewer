@@ -62,7 +62,13 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
       ) : null}
 
       <div className="grid gap-4 lg:grid-cols-[1.3fr_0.7fr]">
-        <div className={cn('min-h-[320px]', filters.view === 'map' ? 'block' : 'hidden', 'lg:block')}>
+        <div
+          className={cn(
+            'h-[48vh] min-h-[360px] max-h-[720px] lg:h-[68vh]',
+            filters.view === 'map' ? 'block' : 'hidden',
+            'lg:block'
+          )}
+        >
           <MapShell stations={stations} />
         </div>
         <div className={cn(filters.view === 'list' ? 'block' : 'hidden', 'lg:block')}>

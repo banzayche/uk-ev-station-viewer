@@ -22,7 +22,7 @@ type MapShellProps = {
 
 export function MapShell({ stations, center, zoom, onSelectStation }: MapShellProps) {
   return (
-    <div className="h-full min-h-[320px] overflow-hidden rounded-3xl border border-white/50 bg-white/70 shadow-soft">
+    <div className="h-full overflow-hidden rounded-3xl border border-white/50 bg-white/70 shadow-soft">
       <MapView
         stations={stations}
         center={center ?? { lat: publicEnv.mapDefaultLat, lon: publicEnv.mapDefaultLon }}

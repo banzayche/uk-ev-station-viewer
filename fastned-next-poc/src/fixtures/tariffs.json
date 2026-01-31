@@ -1,0 +1,36 @@
+{
+  "lastUpdated": "2026-01-15T09:00:00Z",
+  "tariffs": [
+    {
+      "stationId": "uk-london-hammersmith",
+      "currency": "GBP",
+      "pricePerKwh": 0.79,
+      "connectionFee": 0.35,
+      "notes": "Ad-hoc pay-as-you-go pricing."
+    },
+    {
+      "stationId": "uk-manchester-trafford",
+      "currency": "GBP",
+      "pricePerKwh": 0.75,
+      "pricePerMinute": 0.2,
+      "notes": "Peak pricing between 5pm-9pm."
+    },
+    {
+      "stationId": "uk-bristol-cribbs",
+      "currency": "GBP",
+      "pricePerKwh": 0.78,
+      "connectionFee": 0.25
+    },
+    {
+      "stationId": "uk-edinburgh-gogar",
+      "currency": "GBP",
+      "pricePerKwh": 0.76
+    },
+    {
+      "stationId": "uk-belfast-odyssey",
+      "currency": "GBP",
+      "pricePerKwh": 0.74,
+      "notes": "Introductory pricing for new site."
+    }
+  ]
+}

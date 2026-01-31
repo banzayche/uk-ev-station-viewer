@@ -1,0 +1,457 @@
+{
+  "lastUpdated": "2026-01-20T12:00:00Z",
+  "stations": [
+    {
+      "id": "uk-london-hammersmith",
+      "name": "Hammersmith Flyover",
+      "address": {
+        "line1": "A4 Great West Rd",
+        "city": "London",
+        "postcode": "W6 9HP",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 51.492,
+        "lon": -0.224
+      },
+      "operator": "Fastned",
+      "amenities": ["Coffee", "Toilets", "Wi-Fi"],
+      "evses": [
+        {
+          "id": "evse-uk-london-hammersmith-1",
+          "connectors": [
+            { "id": "con-uk-london-hammersmith-1a", "type": "CCS", "powerKw": 300 },
+            { "id": "con-uk-london-hammersmith-1b", "type": "CHAdeMO", "powerKw": 50 }
+          ]
+        },
+        {
+          "id": "evse-uk-london-hammersmith-2",
+          "connectors": [
+            { "id": "con-uk-london-hammersmith-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-london-barking",
+      "name": "Barking Riverside",
+      "address": {
+        "line1": "Renwick Rd",
+        "city": "London",
+        "postcode": "IG11 0YF",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 51.535,
+        "lon": 0.074
+      },
+      "operator": "Fastned",
+      "amenities": ["Snack kiosk"],
+      "evses": [
+        {
+          "id": "evse-uk-london-barking-1",
+          "connectors": [
+            { "id": "con-uk-london-barking-1a", "type": "CCS", "powerKw": 150 }
+          ]
+        },
+        {
+          "id": "evse-uk-london-barking-2",
+          "connectors": [
+            { "id": "con-uk-london-barking-2a", "type": "CCS", "powerKw": 300 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-oxford-peartree",
+      "name": "Peartree Oxford",
+      "address": {
+        "line1": "Peartree Roundabout",
+        "city": "Oxford",
+        "postcode": "OX2 8JZ",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 51.754,
+        "lon": -1.27
+      },
+      "operator": "Fastned",
+      "amenities": ["Cafe", "Toilets"],
+      "evses": [
+        {
+          "id": "evse-uk-oxford-peartree-1",
+          "connectors": [
+            { "id": "con-uk-oxford-peartree-1a", "type": "CCS", "powerKw": 250 },
+            { "id": "con-uk-oxford-peartree-1b", "type": "CHAdeMO", "powerKw": 50 }
+          ]
+        },
+        {
+          "id": "evse-uk-oxford-peartree-2",
+          "connectors": [
+            { "id": "con-uk-oxford-peartree-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-birmingham-selly-oak",
+      "name": "Selly Oak Gateway",
+      "address": {
+        "line1": "Bristol Rd",
+        "city": "Birmingham",
+        "postcode": "B29 6NA",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 52.486,
+        "lon": -1.89
+      },
+      "operator": "Fastned",
+      "amenities": ["Retail", "Restrooms"],
+      "evses": [
+        {
+          "id": "evse-uk-birmingham-selly-oak-1",
+          "connectors": [
+            { "id": "con-uk-birmingham-selly-oak-1a", "type": "CCS", "powerKw": 300 }
+          ]
+        },
+        {
+          "id": "evse-uk-birmingham-selly-oak-2",
+          "connectors": [
+            { "id": "con-uk-birmingham-selly-oak-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-manchester-trafford",
+      "name": "Trafford Centre",
+      "address": {
+        "line1": "The Trafford Centre",
+        "city": "Manchester",
+        "postcode": "M17 8AA",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 53.48,
+        "lon": -2.242
+      },
+      "operator": "Fastned",
+      "amenities": ["Shopping", "Food hall"],
+      "evses": [
+        {
+          "id": "evse-uk-manchester-trafford-1",
+          "connectors": [
+            { "id": "con-uk-manchester-trafford-1a", "type": "CCS", "powerKw": 350 }
+          ]
+        },
+        {
+          "id": "evse-uk-manchester-trafford-2",
+          "connectors": [
+            { "id": "con-uk-manchester-trafford-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-liverpool-switch-island",
+      "name": "Switch Island",
+      "address": {
+        "line1": "Dunnings Bridge Rd",
+        "city": "Liverpool",
+        "postcode": "L30 6TG",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 53.408,
+        "lon": -2.991
+      },
+      "operator": "Fastned",
+      "amenities": ["Coffee", "Toilets"],
+      "evses": [
+        {
+          "id": "evse-uk-liverpool-switch-island-1",
+          "connectors": [
+            { "id": "con-uk-liverpool-switch-island-1a", "type": "CCS", "powerKw": 200 }
+          ]
+        },
+        {
+          "id": "evse-uk-liverpool-switch-island-2",
+          "connectors": [
+            { "id": "con-uk-liverpool-switch-island-2a", "type": "CHAdeMO", "powerKw": 50 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-leeds-thorpe-park",
+      "name": "Thorpe Park Leeds",
+      "address": {
+        "line1": "Century Way",
+        "city": "Leeds",
+        "postcode": "LS15 8ZB",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 53.8,
+        "lon": -1.549
+      },
+      "operator": "Fastned",
+      "amenities": ["Retail", "Cafe"],
+      "evses": [
+        {
+          "id": "evse-uk-leeds-thorpe-park-1",
+          "connectors": [
+            { "id": "con-uk-leeds-thorpe-park-1a", "type": "CCS", "powerKw": 300 }
+          ]
+        },
+        {
+          "id": "evse-uk-leeds-thorpe-park-2",
+          "connectors": [
+            { "id": "con-uk-leeds-thorpe-park-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-sheffield-meadowhall",
+      "name": "Meadowhall",
+      "address": {
+        "line1": "Meadowhall Way",
+        "city": "Sheffield",
+        "postcode": "S9 1EP",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 53.381,
+        "lon": -1.47
+      },
+      "operator": "Fastned",
+      "amenities": ["Shopping"],
+      "evses": [
+        {
+          "id": "evse-uk-sheffield-meadowhall-1",
+          "connectors": [
+            { "id": "con-uk-sheffield-meadowhall-1a", "type": "CCS", "powerKw": 250 }
+          ]
+        },
+        {
+          "id": "evse-uk-sheffield-meadowhall-2",
+          "connectors": [
+            { "id": "con-uk-sheffield-meadowhall-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-bristol-cribbs",
+      "name": "Cribbs Causeway",
+      "address": {
+        "line1": "Merlin Rd",
+        "city": "Bristol",
+        "postcode": "BS10 7SR",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 51.454,
+        "lon": -2.587
+      },
+      "operator": "Fastned",
+      "amenities": ["Food court", "Toilets"],
+      "evses": [
+        {
+          "id": "evse-uk-bristol-cribbs-1",
+          "connectors": [
+            { "id": "con-uk-bristol-cribbs-1a", "type": "CCS", "powerKw": 300 }
+          ]
+        },
+        {
+          "id": "evse-uk-bristol-cribbs-2",
+          "connectors": [
+            { "id": "con-uk-bristol-cribbs-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-cardiff-bay",
+      "name": "Cardiff Bay",
+      "address": {
+        "line1": "Ferry Rd",
+        "city": "Cardiff",
+        "postcode": "CF11 0JL",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 51.481,
+        "lon": -3.179
+      },
+      "operator": "Fastned",
+      "amenities": ["Cafe"],
+      "evses": [
+        {
+          "id": "evse-uk-cardiff-bay-1",
+          "connectors": [
+            { "id": "con-uk-cardiff-bay-1a", "type": "CCS", "powerKw": 250 }
+          ]
+        },
+        {
+          "id": "evse-uk-cardiff-bay-2",
+          "connectors": [
+            { "id": "con-uk-cardiff-bay-2a", "type": "CHAdeMO", "powerKw": 50 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-newcastle-gateshead",
+      "name": "Gateshead Metro",
+      "address": {
+        "line1": "Prince Consort Rd",
+        "city": "Newcastle",
+        "postcode": "NE8 4DP",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 54.978,
+        "lon": -1.617
+      },
+      "operator": "Fastned",
+      "amenities": ["Retail"],
+      "evses": [
+        {
+          "id": "evse-uk-newcastle-gateshead-1",
+          "connectors": [
+            { "id": "con-uk-newcastle-gateshead-1a", "type": "CCS", "powerKw": 300 }
+          ]
+        },
+        {
+          "id": "evse-uk-newcastle-gateshead-2",
+          "connectors": [
+            { "id": "con-uk-newcastle-gateshead-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-edinburgh-gogar",
+      "name": "Gogarburn",
+      "address": {
+        "line1": "Gogar Station Rd",
+        "city": "Edinburgh",
+        "postcode": "EH12 9BQ",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 55.953,
+        "lon": -3.188
+      },
+      "operator": "Fastned",
+      "amenities": ["Cafe", "Toilets"],
+      "evses": [
+        {
+          "id": "evse-uk-edinburgh-gogar-1",
+          "connectors": [
+            { "id": "con-uk-edinburgh-gogar-1a", "type": "CCS", "powerKw": 300 }
+          ]
+        },
+        {
+          "id": "evse-uk-edinburgh-gogar-2",
+          "connectors": [
+            { "id": "con-uk-edinburgh-gogar-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-glasgow-braehead",
+      "name": "Braehead",
+      "address": {
+        "line1": "Kings Inch Rd",
+        "city": "Glasgow",
+        "postcode": "G51 4BN",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 55.864,
+        "lon": -4.251
+      },
+      "operator": "Fastned",
+      "amenities": ["Retail", "Toilets"],
+      "evses": [
+        {
+          "id": "evse-uk-glasgow-braehead-1",
+          "connectors": [
+            { "id": "con-uk-glasgow-braehead-1a", "type": "CCS", "powerKw": 300 }
+          ]
+        },
+        {
+          "id": "evse-uk-glasgow-braehead-2",
+          "connectors": [
+            { "id": "con-uk-glasgow-braehead-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-aberdeen-bucksburn",
+      "name": "Bucksburn",
+      "address": {
+        "line1": "A96 Inverurie Rd",
+        "city": "Aberdeen",
+        "postcode": "AB21 9PG",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 57.149,
+        "lon": -2.095
+      },
+      "operator": "Fastned",
+      "amenities": ["Cafe"],
+      "evses": [
+        {
+          "id": "evse-uk-aberdeen-bucksburn-1",
+          "connectors": [
+            { "id": "con-uk-aberdeen-bucksburn-1a", "type": "CCS", "powerKw": 200 }
+          ]
+        },
+        {
+          "id": "evse-uk-aberdeen-bucksburn-2",
+          "connectors": [
+            { "id": "con-uk-aberdeen-bucksburn-2a", "type": "CHAdeMO", "powerKw": 50 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uk-belfast-odyssey",
+      "name": "Odyssey Place",
+      "address": {
+        "line1": "Queens Rd",
+        "city": "Belfast",
+        "postcode": "BT3 9FJ",
+        "country": "UK"
+      },
+      "coordinates": {
+        "lat": 54.597,
+        "lon": -5.93
+      },
+      "operator": "Fastned",
+      "amenities": ["Retail", "Wi-Fi"],
+      "evses": [
+        {
+          "id": "evse-uk-belfast-odyssey-1",
+          "connectors": [
+            { "id": "con-uk-belfast-odyssey-1a", "type": "CCS", "powerKw": 250 }
+          ]
+        },
+        {
+          "id": "evse-uk-belfast-odyssey-2",
+          "connectors": [
+            { "id": "con-uk-belfast-odyssey-2a", "type": "CCS", "powerKw": 150 }
+          ]
+        }
+      ]
+    }
+  ]
+}

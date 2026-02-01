@@ -34,13 +34,13 @@ export function StationFilters({ filters, onChange }: StationFiltersProps) {
           onChange={(event) => onChange({ ...filters, status: event.target.value })}
         >
           {statusOptions.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option key={option.value} value={option.value} className="text-muted">
               {option.label}
             </option>
           ))}
         </Select>
       </div>
-      <label className="flex h-10 items-center gap-2 rounded-2xl border border-white/70 bg-white/80 px-3 text-sm font-semibold text-muted">
+      <label className="flex h-10 items-center gap-2 rounded-2xl border border-white/70 bg-white/80 px-3 text-sm font-normal text-muted">
         <span>Min power</span>
         <input
           aria-label="Minimum power"

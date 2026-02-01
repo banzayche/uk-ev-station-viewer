@@ -3,6 +3,7 @@
 import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { MapShell } from '@/components/map/MapShell';
+import { Skeleton } from '@/components/ui/Skeleton';
 import { SegmentedControl } from '@/components/ui/SegmentedControl';
 import { StationFilters } from '@/components/stations/StationFilters';
 import { StationList } from '@/components/stations/StationList';
@@ -12,6 +13,7 @@ import { useFavorites } from '@/hooks/useFavorites';
 import { useFilterParams } from '@/hooks/useFilterParams';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useCompareSelection } from '@/hooks/useCompareSelection';
+import { useDelayedFlag } from '@/hooks/useDelayedFlag';
 import { cn } from '@/lib/utils';
 
 export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list' }) {
@@ -24,6 +26,7 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
     queryFn: () => fetchStations(queryFilters),
     placeholderData: (previous) => previous
   });
+  const showInitialSkeleton = useDelayedFlag(isLoading && !data, 180);
 
   const { favorites } = useFavorites();
   const compare = useCompareSelection(2);
@@ -69,12 +72,16 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
             'lg:block'
           )}
         >
-          <MapShell stations={stations} />
+          {showInitialSkeleton ? (
+            <Skeleton className="h-full w-full rounded-3xl" />
+          ) : (
+            <MapShell stations={stations} />
+          )}
         </div>
         <div className={cn(filters.view === 'list' ? 'block' : 'hidden', 'lg:block')}>
           <StationList
             stations={stations}
-            isLoading={isLoading}
+            isLoading={showInitialSkeleton}
             isUpdating={isFetching && !isLoading}
             compare={compare}
             lastUpdated={data?.meta.lastUpdated}

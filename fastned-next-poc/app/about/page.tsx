@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12">
+    <div className="mx-auto max-w-6xl px-4 py-12">
       <h1 className="text-3xl font-semibold">About this POC</h1>
       <p className="mt-3 text-sm text-muted">
         This is a portfolio-quality Next.js 14 App Router proof of concept for exploring Fastned

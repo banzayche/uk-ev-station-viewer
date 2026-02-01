@@ -14,7 +14,7 @@ export function StationDetailClient({ station, tariff }: { station: Station; tar
   const maxPower = getMaxPower(station.evses);
 
   return (
-    <section className="mx-auto max-w-5xl px-4 py-10">
+    <section className="mx-auto max-w-6xl px-4 py-10">
       <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
         <div>
           <h1 className="text-3xl font-semibold">{station.name}</h1>

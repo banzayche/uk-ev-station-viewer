@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
 import { Toggle } from '@/components/ui/Toggle';
@@ -17,6 +20,18 @@ type StationFiltersProps = {
 };
 
 export function StationFilters({ filters, onChange }: StationFiltersProps) {
+  const [minPowerDraft, setMinPowerDraft] = useState(filters.minPowerKw);
+
+  useEffect(() => {
+    setMinPowerDraft(filters.minPowerKw);
+  }, [filters.minPowerKw]);
+
+  const commitMinPower = () => {
+    if (minPowerDraft !== filters.minPowerKw) {
+      onChange({ ...filters, minPowerKw: minPowerDraft });
+    }
+  };
+
   return (
     <div className="flex flex-1 flex-wrap items-center gap-3">
       <div className="min-w-[220px] flex-1">
@@ -40,21 +55,22 @@ export function StationFilters({ filters, onChange }: StationFiltersProps) {
           ))}
         </Select>
       </div>
-      <label className="flex h-10 items-center gap-2 rounded-2xl border border-white/70 bg-white/80 px-3 text-sm font-normal text-muted min-w-[286px]">
+      <label className="flex h-10 items-center gap-2 rounded-2xl border border-white/70 bg-white/80 px-3 text-sm font-normal text-muted min-w-[320px]">
         <span>Min power</span>
         <input
           aria-label="Minimum power"
           type="range"
           min={50}
-          max={350}
+          max={400000}
           step={10}
-          value={filters.minPowerKw}
-          onChange={(event) =>
-            onChange({ ...filters, minPowerKw: Number(event.target.value) })
-          }
+          value={minPowerDraft}
+          onChange={(event) => setMinPowerDraft(Number(event.target.value))}
+          onMouseUp={commitMinPower}
+          onTouchEnd={commitMinPower}
+          onKeyUp={commitMinPower}
           className="accent-accent-strong"
         />
-        <span className="text-ink">{filters.minPowerKw}kW</span>
+        <span className="text-ink">{minPowerDraft}kW</span>
       </label>
       <Toggle
         pressed={filters.favoritesOnly}

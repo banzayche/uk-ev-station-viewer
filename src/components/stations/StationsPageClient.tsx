@@ -19,7 +19,8 @@ import { cn } from '@/lib/utils';
 export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list' }) {
   const { filters, setFilters } = useFilterParams(defaultView);
   const debouncedQuery = useDebouncedValue(filters.q, 500);
-  const queryFilters = { ...filters, q: debouncedQuery };
+  const debouncedMinPowerKw = useDebouncedValue(filters.minPowerKw, 400);
+  const queryFilters = { ...filters, q: debouncedQuery, minPowerKw: debouncedMinPowerKw };
   const lastErrorRef = useRef<string | null>(null);
 
   const { data, isLoading, isError, isFetching, error } = useQuery({

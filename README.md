@@ -4,7 +4,7 @@ Portfolio Next.js 14 App Router app that explores Fastned UK charging stations v
 
 ## Demo
 
-- Live: <add-your-vercel-url-here>
+- Live: https://uk-ev-station-viewer.vercel.app/stations
 
 ## Highlights
 

@@ -81,6 +81,7 @@ export default function MapView({ stations, center, zoom, onSelectStation }: Map
                 <div className="text-xs text-muted">{statusLabel(station.status)}</div>
               ) : null}
               <Link
+                tabIndex={0}
                 href={`/stations/${station.id}`}
                 className="text-xs font-semibold text-blue-700"
               >

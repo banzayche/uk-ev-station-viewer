@@ -33,6 +33,7 @@ export function StationCompareBar({
             !compareReady && 'pointer-events-none opacity-50'
           )}
           aria-disabled={!compareReady}
+          tabIndex={0}
         >
           Compare
         </Link>

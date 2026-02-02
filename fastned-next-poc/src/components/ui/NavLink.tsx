@@ -16,6 +16,8 @@ export function NavLink({ href, children }: NavLinkProps) {
   return (
     <Link
       href={href}
+      aria-current={isActive ? 'page' : undefined}
+      tabIndex={0}
       className={cn(
         'rounded-full px-3 py-1 text-sm font-medium transition',
         isActive ? 'bg-accent text-black' : 'text-ink/80 hover:bg-white/80'

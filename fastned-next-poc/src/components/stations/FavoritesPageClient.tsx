@@ -28,6 +28,7 @@ export function FavoritesPageClient() {
         </div>
         <Link
           href="/stations"
+          tabIndex={0}
           className="rounded-full border border-white/60 bg-white/80 px-4 py-2 text-sm font-semibold"
         >
           Browse stations

@@ -1,7 +1,7 @@
 import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
 import { Toggle } from '@/components/ui/Toggle';
-import { FilterState } from '@/hooks/useFilterParams';
+import type { FilterState } from '@/types/stations';
 
 const statusOptions = [
   { value: 'all', label: 'All statuses' },

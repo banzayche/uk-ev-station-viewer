@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { StationListItem } from '@/domain/types';
 import { StatusPill } from '@/components/ui/StatusPill';
 import { FavoriteButton } from '@/components/stations/FavoriteButton';
-import { CompareState } from './StationList';
+import type { CompareState } from '@/types/stations';
 import { formatPower } from '@/lib/utils';
 
 export function StationCard({

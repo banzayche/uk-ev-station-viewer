@@ -2,13 +2,7 @@ import { StationListItem } from '@/domain/types';
 import { StationCard } from './StationCard';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { LoadingDots } from '@/components/ui/LoadingDots';
-
-export type CompareState = {
-  selectedIds: string[];
-  toggleCompare: (id: string) => void;
-  clearCompare: () => void;
-  canSelect: (id: string) => boolean;
-};
+import type { CompareState } from '@/types/stations';
 
 type StationListProps = {
   stations: StationListItem[];

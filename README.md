@@ -46,7 +46,7 @@ Open `http://localhost:3000`.
 ## Mock vs live mode
 
 - `NEXT_PUBLIC_APP_MODE=mock` uses fixtures in `src/fixtures/*.json`.
-- `NEXT_PUBLIC_APP_MODE=live` calls the real Fastned UK Open Data endpoints.
+- `NEXT_PUBLIC_APP_MODE=live` calls the real Fastned UK Open Data (OCPI 2.2.1) endpoints.
 
 **Note:** To keep upstream calls to two endpoints (reference + availability), the app expects a combined availability/tariffs endpoint in live mode. If tariffs are on a separate endpoint, consider proxying them server-side or configure `FASTNED_UK_TARIFFS_PATH` to the combined endpoint.
 
@@ -84,13 +84,3 @@ pnpm test:unit
 ```bash
 pnpm test:e2e
 ```
-
-## Screenshots
-
-Run the app locally and capture screenshots from:
-
-- `/` (map + list)
-- `/stations` (list-first)
-- `/stations/[id]` (detail view)
-- `/favorites`
-- `/compare?ids=...`

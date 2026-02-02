@@ -3,14 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { Route } from 'next';
-
-export type FilterState = {
-  q: string;
-  status: string;
-  minPowerKw: number;
-  favoritesOnly: boolean;
-  view: 'map' | 'list';
-};
+import type { FilterState } from '@/types/stations';
 
 type SearchParamsLike = {
   get: (key: string) => string | null;

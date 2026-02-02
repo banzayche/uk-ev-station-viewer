@@ -1,10 +1,11 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { MapShell } from '@/components/map/MapShell';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { SegmentedControl } from '@/components/ui/SegmentedControl';
+import { toast } from 'sonner';
 import { StationFilters } from '@/components/stations/StationFilters';
 import { StationList } from '@/components/stations/StationList';
 import { StationCompareBar } from '@/components/stations/StationCompareBar';
@@ -19,8 +20,9 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
   const { filters, setFilters } = useFilterParams(defaultView);
   const debouncedQuery = useDebouncedValue(filters.q, 500);
   const queryFilters = { ...filters, q: debouncedQuery };
+  const lastErrorRef = useRef<string | null>(null);
 
-  const { data, isLoading, isError, isFetching } = useQuery({
+  const { data, isLoading, isError, isFetching, error } = useQuery({
     queryKey: ['stations', queryFilters],
     queryFn: () => fetchStations(queryFilters),
     placeholderData: (previous) => previous
@@ -37,6 +39,18 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
     }
     return list;
   }, [data?.data, favorites, filters.favoritesOnly]);
+
+  useEffect(() => {
+    if (!isError) {
+      lastErrorRef.current = null;
+      return;
+    }
+    const message = 'We were unable to load stations right now.';
+    if (lastErrorRef.current !== message) {
+      toast.error(message);
+      lastErrorRef.current = message;
+    }
+  }, [error, isError]);
 
   return (
     <div className="space-y-5 lg:grid lg:h-full lg:min-h-0 lg:grid-rows-[auto_minmax(0,1fr)_auto] lg:gap-4 lg:space-y-0">
@@ -56,12 +70,6 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
           </div>
         </div>
       </div>
-
-      {isError ? (
-        <div className="rounded-2xl border border-white/50 bg-white/70 p-6 text-sm text-muted lg:shrink-0">
-          We were unable to load stations right now. Please try again in a moment.
-        </div>
-      ) : null}
 
       <div className="grid items-stretch gap-4 lg:h-full lg:min-h-0 lg:grid-cols-[1.3fr_0.7fr]">
         <div

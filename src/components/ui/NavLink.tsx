@@ -8,15 +8,17 @@ import { cn } from '@/lib/utils';
 type NavLinkProps = {
   href: Route;
   children: React.ReactNode;
+  onClick?: () => void;
 };
 
-export function NavLink({ href, children }: NavLinkProps) {
+export function NavLink({ href, children, onClick }: NavLinkProps) {
   const pathname = usePathname();
   const isActive = pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <Link
       href={href}
+      onClick={onClick}
       aria-current={isActive ? 'page' : undefined}
       tabIndex={0}
       className={cn(

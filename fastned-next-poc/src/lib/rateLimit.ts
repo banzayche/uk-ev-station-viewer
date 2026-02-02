@@ -1,3 +1,5 @@
+import 'server-only';
+
 type Bucket = {
   count: number;
   resetAt: number;

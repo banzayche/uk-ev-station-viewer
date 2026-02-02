@@ -1,3 +1,5 @@
+import 'server-only';
+
 import referenceFixture from '@/fixtures/reference.json';
 import availabilityFixture from '@/fixtures/availability.json';
 import tariffsFixture from '@/fixtures/tariffs.json';

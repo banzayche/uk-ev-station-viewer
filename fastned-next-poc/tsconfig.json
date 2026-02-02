@@ -17,8 +17,9 @@
     "jsx": "preserve",
     "incremental": true,
     "types": [
-      "vitest/globals",
-      "@testing-library/jest-dom"
+      "node",
+      "react",
+      "react-dom"
     ],
     "baseUrl": ".",
     "paths": {
@@ -40,6 +41,12 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "e2e",
+    "src/tests",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
   ]
 }

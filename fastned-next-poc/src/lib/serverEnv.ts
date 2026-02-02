@@ -1,3 +1,5 @@
+import 'server-only';
+
 export const serverEnv = {
   baseUrl: process.env.FASTNED_UK_API_BASE_URL ?? '',
   apiKey: process.env.FASTNED_UK_API_KEY ?? '',

@@ -58,7 +58,7 @@ export function StationList({
           </span>
         )}
       </div>
-      <ul className="space-y-3">
+      <ul className="space-y-3" role="list" aria-live="polite">
         {stations.map((station) => (
           <li key={station.id}>
             <StationCard station={station} compare={compare} />

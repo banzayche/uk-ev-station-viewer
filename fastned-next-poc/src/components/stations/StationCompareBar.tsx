@@ -17,13 +17,17 @@ export function StationCompareBar({
 
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/50 bg-white/80 px-4 py-3 text-sm shadow-soft">
-      <div className="text-muted">
+      <div className="text-muted" role="status" aria-live="polite">
         {compareReady
           ? 'Ready to compare two stations.'
           : 'Select one more station to compare.'}
       </div>
       <div className="flex items-center gap-2">
-        <button onClick={onClear} className={buttonStyles({ variant: 'ghost', size: 'sm' })}>
+        <button
+          onClick={onClear}
+          className={buttonStyles({ variant: 'ghost', size: 'sm' })}
+          aria-label="Clear comparison selection"
+        >
           Clear
         </button>
         <Link
@@ -33,7 +37,8 @@ export function StationCompareBar({
             !compareReady && 'pointer-events-none opacity-50'
           )}
           aria-disabled={!compareReady}
-          tabIndex={0}
+          aria-label="Compare selected stations"
+          tabIndex={compareReady ? 0 : -1}
         >
           Compare
         </Link>

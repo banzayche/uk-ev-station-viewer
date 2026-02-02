@@ -57,6 +57,8 @@ export default function MapView({ stations, center, zoom, onSelectStation }: Map
       zoom={zoom}
       scrollWheelZoom
       className="h-full"
+      role="region"
+      aria-label="Map of charging stations"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -84,6 +86,7 @@ export default function MapView({ stations, center, zoom, onSelectStation }: Map
                 tabIndex={0}
                 href={`/stations/${station.id}`}
                 className="text-xs font-semibold text-blue-700"
+                aria-label={`Open details for ${station.name}`}
               >
                 Open details
               </Link>

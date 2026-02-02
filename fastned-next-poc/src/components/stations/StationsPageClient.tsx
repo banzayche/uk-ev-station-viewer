@@ -13,12 +13,11 @@ import { useFavorites } from '@/hooks/useFavorites';
 import { useFilterParams } from '@/hooks/useFilterParams';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useCompareSelection } from '@/hooks/useCompareSelection';
-import { useDelayedFlag } from '@/hooks/useDelayedFlag';
 import { cn } from '@/lib/utils';
 
 export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list' }) {
   const { filters, setFilters } = useFilterParams(defaultView);
-  const debouncedQuery = useDebouncedValue(filters.q, 300);
+  const debouncedQuery = useDebouncedValue(filters.q, 500);
   const queryFilters = { ...filters, q: debouncedQuery };
 
   const { data, isLoading, isError, isFetching } = useQuery({
@@ -26,7 +25,7 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
     queryFn: () => fetchStations(queryFilters),
     placeholderData: (previous) => previous
   });
-  const showInitialSkeleton = useDelayedFlag(isLoading && !data, 180);
+  const showInitialSkeleton = isLoading;
 
   const { favorites } = useFavorites();
   const compare = useCompareSelection(2);

@@ -6,7 +6,7 @@ export function NavBar() {
     <header className="sticky top-0 z-40 border-b border-white/40 bg-white/70 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <Link href="/" className="text-lg font-semibold">
-          Fastned Explorer
+          Fastned Station Explorer (UK) — POC
         </Link>
         <nav className="flex items-center gap-4 text-sm" aria-label="Main navigation">
           <NavLink href="/stations">Stations</NavLink>

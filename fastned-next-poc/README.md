@@ -1,9 +1,19 @@
 # Fastned Station Explorer (UK) — Next.js POC
 
-A portfolio-quality Next.js 14 App Router application that explores Fastned UK charging stations via a map + list experience. It demonstrates BFF route handlers, caching, data normalization, UX polish, and a robust testing setup.
+Portfolio Next.js 14 App Router app that explores Fastned UK charging stations via map + list.
+
+## Demo
+
+- Live: <add-your-vercel-url-here>
+
+## Highlights
+
+- App Router + BFF route handlers for data normalization.
+- Server/client separation with caching (`revalidate` + React Query).
+- SSR-safe Leaflet map, polished UI, and tests (unit + e2e).
 
 ## Why this exists
-This project is built to showcase production-style Next.js architecture in a real product context: performance, caching, routing, state management, and modern frontend DX.
+Showcase production-style Next.js architecture in a real product context: performance, caching, routing, and modern frontend DX.
 
 ## Getting started
 
@@ -84,4 +94,3 @@ Run the app locally and capture screenshots from:
 - `/stations/[id]` (detail view)
 - `/favorites`
 - `/compare?ids=...`
-

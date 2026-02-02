@@ -40,8 +40,8 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
   }, [data?.data, favorites, filters.favoritesOnly]);
 
   return (
-    <div className="space-y-5">
-      <div className="flex flex-col gap-4">
+    <div className="space-y-5 lg:grid lg:h-full lg:min-h-0 lg:grid-rows-[auto_minmax(0,1fr)_auto] lg:gap-4 lg:space-y-0">
+      <div className="flex flex-col gap-4 lg:shrink-0">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <StationFilters filters={filters} onChange={setFilters} />
           <div className="lg:hidden">
@@ -59,15 +59,15 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
       </div>
 
       {isError ? (
-        <div className="rounded-2xl border border-white/50 bg-white/70 p-6 text-sm text-muted">
+        <div className="rounded-2xl border border-white/50 bg-white/70 p-6 text-sm text-muted lg:shrink-0">
           We were unable to load stations right now. Please try again in a moment.
         </div>
       ) : null}
 
-      <div className="grid items-stretch gap-4 lg:grid-cols-[1.3fr_0.7fr]">
+      <div className="grid items-stretch gap-4 lg:h-full lg:min-h-0 lg:grid-cols-[1.3fr_0.7fr]">
         <div
           className={cn(
-            'h-[48vh] min-h-[360px] max-h-[720px] lg:h-[68vh]',
+            'h-[48vh] min-h-[360px] max-h-[720px] lg:h-full',
             filters.view === 'map' ? 'block' : 'hidden',
             'lg:block'
           )}
@@ -80,7 +80,7 @@ export function StationsPageClient({ defaultView }: { defaultView: 'map' | 'list
         </div>
         <div
           className={cn(
-            'lg:h-[68vh] lg:min-h-[360px] lg:max-h-[720px] lg:overflow-y-auto lg:pr-1',
+            'lg:h-full lg:min-h-0 lg:overflow-y-auto lg:pr-1',
             filters.view === 'list' ? 'block' : 'hidden',
             'lg:block'
           )}

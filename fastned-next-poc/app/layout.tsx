@@ -27,7 +27,7 @@ export default function RootLayout({
         <AppProviders>
           <div className="flex min-h-[100dvh] flex-col">
             <NavBar />
-            <main className="flex-1 pb-20">{children}</main>
+            <main className="flex-1 min-h-0">{children}</main>
             <Footer />
           </div>
         </AppProviders>

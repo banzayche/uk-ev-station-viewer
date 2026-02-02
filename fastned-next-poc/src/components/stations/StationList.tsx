@@ -48,15 +48,14 @@ export function StationList({
   return (
     <div className="min-h-[420px] space-y-3">
       <div className="flex min-h-[18px] items-center justify-between text-xs text-muted">
-        <span>
-          {lastUpdated ? `Last updated ${new Date(lastUpdated).toLocaleString()}` : '\u00A0'}
-        </span>
         {isUpdating ? (
           <span className="rounded-full bg-white/80 px-2 py-0.5 text-[11px] text-muted">
             Updating…
           </span>
         ) : (
-          <span>&nbsp;</span>
+          <span>
+            {lastUpdated ? `Last updated ${new Date(lastUpdated).toLocaleString()}` : '\u00A0'}
+          </span>
         )}
       </div>
       <ul className="space-y-3">

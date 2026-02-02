@@ -40,7 +40,7 @@ export function StationFilters({ filters, onChange }: StationFiltersProps) {
           ))}
         </Select>
       </div>
-      <label className="flex h-10 items-center gap-2 rounded-2xl border border-white/70 bg-white/80 px-3 text-sm font-normal text-muted">
+      <label className="flex h-10 items-center gap-2 rounded-2xl border border-white/70 bg-white/80 px-3 text-sm font-normal text-muted min-w-[286px]">
         <span>Min power</span>
         <input
           aria-label="Minimum power"

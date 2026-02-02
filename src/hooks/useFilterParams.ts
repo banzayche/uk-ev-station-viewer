@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import type { Route } from 'next';
 
 export type FilterState = {
   q: string;
@@ -69,7 +70,10 @@ export function useFilterParams(defaultView: 'map' | 'list') {
       const nextQuery = params.toString();
       const currentQuery = searchParams.toString();
       if (nextQuery !== currentQuery) {
-        router.replace(`${pathname}${nextQuery ? `?${nextQuery}` : ''}`, { scroll: false });
+        router.replace(
+          `${pathname}${nextQuery ? `?${nextQuery}` : ''}` as Route,
+          { scroll: false }
+        );
       }
     },
     [defaultView, pathname, router, searchParams]

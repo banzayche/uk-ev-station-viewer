@@ -52,48 +52,48 @@ export default function MapView({ stations, center, zoom, onSelectStation }: Map
   }, [bounds, stations]);
 
   return (
-    <MapContainer
-      center={[center.lat, center.lon]}
-      zoom={zoom}
-      scrollWheelZoom
-      className="h-full"
-      role="region"
-      aria-label="Map of charging stations"
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <BoundsWatcher onChange={(next) => setBounds(next)} />
-      {visibleStations.map((station) => (
-        <Marker
-          key={station.id}
-          position={[station.coordinates.lat, station.coordinates.lon]}
-          eventHandlers={{
-            click: () => onSelectStation?.(station.id)
-          }}
-        >
-          <Popup>
-            <div className="space-y-1">
-              <div className="text-sm font-semibold">{station.name}</div>
-              <div className="text-xs text-muted">
-                {station.address.city} • {station.address.postcode}
+    <div role="region" aria-label="Map of charging stations" className="h-full">
+      <MapContainer
+        center={[center.lat, center.lon]}
+        zoom={zoom}
+        scrollWheelZoom
+        className="h-full"
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <BoundsWatcher onChange={(next) => setBounds(next)} />
+        {visibleStations.map((station) => (
+          <Marker
+            key={station.id}
+            position={[station.coordinates.lat, station.coordinates.lon]}
+            eventHandlers={{
+              click: () => onSelectStation?.(station.id)
+            }}
+          >
+            <Popup>
+              <div className="space-y-1">
+                <div className="text-sm font-semibold">{station.name}</div>
+                <div className="text-xs text-muted">
+                  {station.address.city} • {station.address.postcode}
+                </div>
+                {station.status ? (
+                  <div className="text-xs text-muted">{statusLabel(station.status)}</div>
+                ) : null}
+                <Link
+                  tabIndex={0}
+                  href={`/stations/${station.id}`}
+                  className="text-xs font-semibold text-blue-700"
+                  aria-label={`Open details for ${station.name}`}
+                >
+                  Open details
+                </Link>
               </div>
-              {station.status ? (
-                <div className="text-xs text-muted">{statusLabel(station.status)}</div>
-              ) : null}
-              <Link
-                tabIndex={0}
-                href={`/stations/${station.id}`}
-                className="text-xs font-semibold text-blue-700"
-                aria-label={`Open details for ${station.name}`}
-              >
-                Open details
-              </Link>
-            </div>
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+    </div>
   );
 }
